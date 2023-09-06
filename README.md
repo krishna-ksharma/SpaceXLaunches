@@ -10,7 +10,6 @@ SpaceX Launch Tracker App
 
 ## What next
 - Ux Improvement like shimmer view and styling
-- Implement bookmarking
 - Unit test
 - Add RxJava
 - Explore SpaceX api and find out the paginated way of calling api.
