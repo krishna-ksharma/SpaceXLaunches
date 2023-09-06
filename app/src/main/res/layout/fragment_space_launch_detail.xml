@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/normal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal"
+            android:layout_marginTop="@dimen/normal"
+            android:padding="@dimen/normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/missionPatchImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/missionName"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingTop="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                app:layout_constraintStart_toStartOf="@+id/missionPatchImage"
+                app:layout_constraintTop_toBottomOf="@+id/missionPatchImage" />
+
+            <TextView
+                android:id="@+id/launchDate"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                app:layout_constraintStart_toStartOf="@+id/missionName"
+                app:layout_constraintTop_toBottomOf="@+id/missionName" />
+
+            <TextView
+                android:id="@+id/rocketDetails"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                android:text="@string/rocket_details"
+                app:layout_constraintStart_toStartOf="@+id/launchDate"
+                app:layout_constraintTop_toBottomOf="@+id/launchDate" />
+
+            <TextView
+                android:id="@+id/rocketName"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/standard"
+                android:paddingEnd="@dimen/standard"
+                app:layout_constraintStart_toStartOf="@+id/rocketDetails"
+                app:layout_constraintTop_toBottomOf="@+id/rocketDetails" />
+
+            <TextView
+                android:id="@+id/rocketType"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/standard"
+                android:paddingEnd="@dimen/standard"
+                app:layout_constraintStart_toStartOf="@+id/rocketName"
+                app:layout_constraintTop_toBottomOf="@+id/rocketName"
+                tools:text="type" />
+
+            <TextView
+                android:id="@+id/rocketDescription"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/standard"
+                android:paddingEnd="@dimen/standard"
+                app:layout_constraintStart_toStartOf="@+id/rocketType"
+                app:layout_constraintTop_toBottomOf="@+id/rocketType"
+                tools:text="description" />
+
+            <TextView
+                android:id="@+id/launchDetails"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                android:text="@string/launch_details"
+                app:layout_constraintStart_toStartOf="@+id/rocketDescription"
+                app:layout_constraintTop_toBottomOf="@+id/rocketDescription" />
+
+            <TextView
+                android:id="@+id/launchStatus"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/standard"
+                android:paddingEnd="@dimen/standard"
+                android:paddingBottom="@dimen/normal"
+                app:layout_constraintStart_toStartOf="@+id/launchDetails"
+                app:layout_constraintTop_toBottomOf="@+id/launchDetails"
+                tools:text="Launch status" />
+
+            <TextView
+                android:id="@+id/launchSite"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/standard"
+                android:paddingEnd="@dimen/standard"
+                android:paddingBottom="@dimen/normal"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/launchStatus"
+                app:layout_constraintTop_toBottomOf="@+id/launchStatus"
+                tools:text="Launch site" />
+
+            <TextView
+                android:id="@+id/launchWindow"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/standard"
+                android:paddingEnd="@dimen/standard"
+                android:paddingBottom="@dimen/normal"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/launchSite"
+                app:layout_constraintTop_toBottomOf="@+id/launchSite"
+                tools:text="Launch Window" />
+
+            <TextView
+                android:id="@+id/missionDescription"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                android:paddingBottom="@dimen/normal"
+                app:layout_constraintStart_toStartOf="@+id/launchWindow"
+                app:layout_constraintTop_toBottomOf="@+id/launchWindow"
+                tools:text="Mission Description" />
+
+            <TextView
+                android:id="@+id/links"
+                style="@style/LargeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                android:paddingBottom="@dimen/normal"
+                app:layout_constraintStart_toStartOf="@+id/missionDescription"
+                app:layout_constraintTop_toBottomOf="@+id/missionDescription"
+                tools:text="Links" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

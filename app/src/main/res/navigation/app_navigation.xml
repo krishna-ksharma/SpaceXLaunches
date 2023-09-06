@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/weather_navigation.xml"
+    app:startDestination="@id/spaceLaunches">
+    <fragment
+        android:id="@+id/spaceLaunches"
+        android:name="com.rsystems.assignment.spacexlaunchtracker.ui.SpaceLaunchesFragment"
+        android:label="@string/space_launches"
+        tools:layout="@layout/fragment_space_launches" >
+        <action
+            android:id="@+id/action_spaceLaunches_to_spaceLauncheDetail"
+            app:destination="@id/spaceLauncheDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/spaceLauncheDetail"
+        android:name="com.rsystems.assignment.spacexlaunchtracker.ui.SpaceXLaunchDetailFragment"
+        android:label="@string/space_launch_detail"
+        tools:layout="@layout/fragment_space_launch_detail" />
+</navigation>

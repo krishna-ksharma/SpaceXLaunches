@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/darker_gray"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/small"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/normal">
+
+            <ImageView
+                android:id="@+id/missionPatchImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/missionName"
+                style="@style/SmallText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingTop="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                app:layout_constraintStart_toEndOf="@+id/missionPatchImage"
+                app:layout_constraintTop_toTopOf="@+id/missionPatchImage" />
+
+            <TextView
+                android:id="@+id/launchDate"
+                style="@style/SmallText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                app:layout_constraintStart_toStartOf="@+id/missionName"
+                app:layout_constraintTop_toBottomOf="@+id/missionName" />
+
+            <TextView
+                android:id="@+id/rocketName"
+                style="@style/SmallText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                app:layout_constraintStart_toStartOf="@+id/launchDate"
+                app:layout_constraintTop_toBottomOf="@+id/launchDate" />
+
+            <TextView
+                android:id="@+id/launchStatus"
+                style="@style/SmallText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/normal"
+                android:paddingEnd="@dimen/normal"
+                android:paddingBottom="@dimen/normal"
+                app:layout_constraintStart_toStartOf="@+id/rocketName"
+                app:layout_constraintTop_toBottomOf="@+id/rocketName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

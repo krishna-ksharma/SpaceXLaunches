@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SpaceX Launch Tracker</string>
+    <string name="space_launches">Space Launches</string>
+    <string name="space_launch_detail">Space Launch Detail</string>
+    <string name="launch_success">Launch Status : Success</string>
+    <string name="launch_failure">Launch Status : Failed</string>
+    <string name="mission_name">• Mission Name: %1$s</string>
+    <string name="launch_date">• Launch Date: %1$s</string>
+    <string name="rocket_details">• Rocket Details:</string>
+    <string name="rocket_details_name">• Name: %1$s</string>
+    <string name="rocket_details_type">• Type: %1$s</string>
+    <string name="rocket_details_description">• Description: %1$s</string>
+    <string name="launch_details">• Launch Details</string>
+    <string name="launch_details_status_failed">• Status: Failed</string>
+    <string name="launch_details_status_success">• Status: Success</string>
+    <string name="launch_details_launch_site">• Launch Site: %1$s</string>
+    <string name="launch_details_launch_window">• Launch Window: %1$s</string>
+    <string name="mission_description">• Mission Description: %1$s</string>
+    <string name="links">• Links: %1$s</string>
+</resources>
