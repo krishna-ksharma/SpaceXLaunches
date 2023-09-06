@@ -3,12 +3,3 @@ plugins {
     id 'com.android.application' version '8.1.0' apply false
     id 'com.google.dagger.hilt.android' version "2.44" apply false
 }
-
-ext {
-    appCompatVersion = '1.2.0'
-    constraintLayoutVersion = '2.0.2'
-    coreTestingVersion = '2.1.0'
-    lifecycleVersion = '2.2.0'
-    materialVersion = '1.2.1'
-    roomVersion = '2.5.2'
-}
