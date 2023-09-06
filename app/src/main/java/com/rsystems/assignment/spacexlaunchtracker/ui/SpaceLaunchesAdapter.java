@@ -7,22 +7,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rsystems.assignment.spacexlaunchtracker.utils.ImageLoader;
 import com.rsystems.assignment.spacexlaunchtracker.R;
 import com.rsystems.assignment.spacexlaunchtracker.databinding.ItemSpaceLaunchBinding;
 import com.rsystems.assignment.spacexlaunchtracker.model.Launches;
 import com.rsystems.assignment.spacexlaunchtracker.utils.DateUtils;
+import com.rsystems.assignment.spacexlaunchtracker.utils.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SpaceLaunchesAdapter extends RecyclerView.Adapter<SpaceLaunchesAdapter.ViewHolder> {
-    private Context context;
     private List<Launches> spaceLaunches;
     private OnItemClickListener onClick;
 
-    public SpaceLaunchesAdapter(Context context, OnItemClickListener onClick) {
-        this.context = context;
+    public SpaceLaunchesAdapter(OnItemClickListener onClick) {
         this.onClick = onClick;
         this.spaceLaunches = new ArrayList<>();
     }
@@ -33,7 +31,9 @@ public class SpaceLaunchesAdapter extends RecyclerView.Adapter<SpaceLaunchesAdap
     }
 
     public interface OnItemClickListener {
-        void onItemClick(Launches rocket);
+        void onItemClick(Launches launch);
+
+        void onFabItemClick(Launches launch);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -50,6 +50,14 @@ public class SpaceLaunchesAdapter extends RecyclerView.Adapter<SpaceLaunchesAdap
             binding.rocketName.setText(item.getRocketModel().getName());
             binding.launchDate.setText(DateUtils.getDate(item.getDate_utc()));
             ImageLoader.loadThumbImage(item.getLinks().getPatch().getSmall(), binding.missionPatchImage);
+            binding.favButton.setImageResource(item.isFavorite() ? R.drawable.ic_bookmark_filled : R.drawable.ic_bookmark);
+            binding.favButton.setOnClickListener(v -> {
+                if (onClick != null) {
+                    item.setFavorite(!item.isFavorite());
+                    notifyItemChanged(getAdapterPosition());
+                    onClick.onFabItemClick(item);
+                }
+            });
             binding.getRoot().setOnClickListener(v -> {
                 if (onClick != null) {
                     onClick.onItemClick(item);

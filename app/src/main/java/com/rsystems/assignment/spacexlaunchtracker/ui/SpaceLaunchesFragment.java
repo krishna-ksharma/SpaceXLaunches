@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.rsystems.assignment.spacexlaunchtracker.R;
 import com.rsystems.assignment.spacexlaunchtracker.data.Status;
 import com.rsystems.assignment.spacexlaunchtracker.databinding.FragmentSpaceLaunchesBinding;
+import com.rsystems.assignment.spacexlaunchtracker.model.Launches;
 import com.rsystems.assignment.spacexlaunchtracker.viewmodels.SpaceLaunchesViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
@@ -57,9 +58,17 @@ public class SpaceLaunchesFragment extends Fragment {
     private void setupAdapter() {
         binding.spaceLaunchesRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.spaceLaunchesRecyclerView.setHasFixedSize(true);
-        SpaceLaunchesAdapter adapter = new SpaceLaunchesAdapter(requireContext(), spaceLaunch -> {
-            viewModel.setSpaceLaunch(spaceLaunch);
-            findNavController(requireView()).navigate(R.id.action_spaceLaunches_to_spaceLauncheDetail);
+        SpaceLaunchesAdapter adapter = new SpaceLaunchesAdapter(new SpaceLaunchesAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Launches launch) {
+                viewModel.setSpaceLaunch(launch);
+                findNavController(requireView()).navigate(R.id.action_spaceLaunches_to_spaceLauncheDetail);
+            }
+
+            @Override
+            public void onFabItemClick(Launches launch) {
+                viewModel.setFabStatus(launch);
+            }
         });
         binding.spaceLaunchesRecyclerView.setAdapter(adapter);
     }

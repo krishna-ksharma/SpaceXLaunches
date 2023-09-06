@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity(tableName = "launches")
 public class Launches {
+    private boolean isFavorite;
     private boolean auto_update;
     private String date_local;
     private String date_precision;
@@ -30,6 +31,14 @@ public class Launches {
     private int window;
 
     private Rocket rocketModel;
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
 
     public Rocket getRocketModel() {
         return rocketModel;

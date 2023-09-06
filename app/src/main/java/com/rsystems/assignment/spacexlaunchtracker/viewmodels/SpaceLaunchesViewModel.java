@@ -39,4 +39,8 @@ public class SpaceLaunchesViewModel extends ViewModel {
     public void setSpaceLaunch(Launches launches)  {
         selectedSpaceLaunch.postValue(launches);
     }
+
+    public void setFabStatus(Launches launches)  {
+        repository.updateFavStatus(launches.getId(), launches.isFavorite());
+    }
 }

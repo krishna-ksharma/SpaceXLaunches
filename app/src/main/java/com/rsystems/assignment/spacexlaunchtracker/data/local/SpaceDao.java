@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.rsystems.assignment.spacexlaunchtracker.model.Launches;
 
@@ -17,4 +18,7 @@ public interface SpaceDao {
 
     @Query("SELECT * FROM launches")
     List<Launches> listLaunches();
+
+    @Query("UPDATE launches SET isFavorite = :status WHERE id =:launchId")
+    void updateFavStatus(String launchId, boolean status);
 }

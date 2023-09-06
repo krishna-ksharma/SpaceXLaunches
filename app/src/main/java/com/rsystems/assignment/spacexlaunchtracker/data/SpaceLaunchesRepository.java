@@ -29,6 +29,10 @@ public class SpaceLaunchesRepository {
         this.spaceDao = dao;
     }
 
+    public void updateFavStatus(String launchId, boolean status) {
+        AsyncTask.execute(() -> spaceDao.updateFavStatus(launchId, status));
+    }
+
     public void listSpaceLaunches(MutableLiveData<Result<List<Launches>>> liveData, boolean hardRefresh) {
         if (hardRefresh) {
             fetchItems(liveData);
