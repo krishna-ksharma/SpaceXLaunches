@@ -1,8 +1,6 @@
 # SpaceXLaunches
 SpaceX Launch Tracker App
 
- ![Alt text](/screenshots/team-list.png?raw=true "Teams") ![Alt text](/screenshots/team-detail.png?raw=true "Team Detail")
-
 ## Tech Stack
 - Android Architecture components like: ViewModel, LiveData, RoomDB, Navigation Component etc.
 - Followed MVVM Android Architecture 
